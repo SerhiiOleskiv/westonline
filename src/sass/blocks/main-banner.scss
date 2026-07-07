@@ -1,0 +1,326 @@
+.main-banner {
+  margin-top: 76px;
+  min-height: calc(100vh - 76px);
+  max-height: calc(100vh - 76px);
+  background-image: url('../../assets/image/content/main-banner-fone.webp');
+  background-repeat: repeat;
+  background-size: cover;
+  box-shadow: 0 4px 50px 0 rgba(10, 10, 13, 0.55);
+
+  @media (min-height: 1010px) {
+    min-height: 833px;
+    max-height: 833px;
+  }
+
+
+  @include vp-767 {
+    margin-top: 56px;
+    min-height: calc(100vh - 56px);
+    max-height: calc(100vh - 56px);
+  }
+
+  @include vp-575 {
+    display: flex;
+    
+  }
+
+  @media only screen and (min-height: 1010px) and (max-width: 821px) {
+    min-height: 780px;
+    max-height: 780px;
+
+    .main-banner__img {
+      top: -30px;
+
+      @include vp-575 {
+        top: 100px;
+      }
+
+      &--second {
+        top: 220px;
+        left: 40px;
+
+        @include vp-767 {
+          left: -20px;
+        }
+
+        @include vp-575 {
+          left: -140px;
+          top: 180px;
+        }
+      }
+    }
+  }
+}
+
+.main-banner__container {
+  margin-top: 80px;
+  display: flex;
+  justify-content: end;
+  z-index: 10;
+
+  @include vp-1600 {
+    margin-top: 52px;
+    padding-right: 80px;
+  }
+
+  @include vp-1023  {
+    padding-right: initial;
+  }
+
+  @include vp-575 {
+    flex: 1;
+    z-index: 190;
+    margin-top: 20px;
+    padding: 0;
+  }
+}
+
+.main-banner__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 3;
+}
+
+.main-banner__img {
+  position: absolute;
+  top: -50px;
+  left: -80px;
+  height: 750px;
+  z-index: 10;
+
+  @include vp-1439 {
+    left: -30px;
+    height: 700px;
+  }
+
+  @include vp-1279 {
+    height: 570px;
+  }
+
+  @include vp-1023 {
+    left: -100px;
+    height: 530px;
+    max-width: none;
+  }
+
+  @media (max-width: 768px) {
+    top: -60px;
+    left: -70px;
+  }
+
+  @include vp-767 {
+    top: -60px;
+    left: -180px;
+  }
+
+  @include vp-575 {
+    top: 90px;
+    left: -170px;
+  }
+
+  @include vp-374 {
+    height: 450px;
+    top: 120px;
+    left: -160px;
+  }
+
+  &--second {
+    z-index: 10;
+    top: 140px;
+    left: calc(50% - 640px);
+
+    @include vp-1600 {
+      top: 100px;
+      left: calc(50% - 680px);
+    }
+
+    @include vp-1439 {
+      top: 100px;
+      left: calc(50% - 660px);
+    }
+
+    @include vp-1279 {
+      left: calc(50% - 500px);
+    }
+
+    @include vp-1023 {
+      top: 170px;
+    }
+
+    @media (max-width: 768px) {
+      top: 290px;
+      left: inherit;
+      right: -330px;
+    }
+
+    @include vp-767 {
+      top: 260px;
+      right: -300px;
+    }
+
+    @include vp-575 {
+      right: -314px;
+      z-index: 20;
+    }
+
+    @include vp-375 {
+      top: 240px;
+      right: -340px;
+    }
+
+    @include vp-374 {
+      height: 450px;
+      top: 200px;
+      right: -290px;
+    }
+
+    
+    @media only screen and (min-height: 1160px) and (max-width: 1036px) {
+      top: 300px;
+      left: 200px;
+    }
+
+    @media only screen and (min-height: 960px) and (max-width: 1536px) {
+      top: 300px;
+      left: 200px;
+    }
+  }
+}
+
+.main-banner__content {
+  max-width: 530px;
+  align-items: start;
+  z-index: 23;
+  font-size: 20px;
+  font-weight: 500;
+  color: $color-default-white;
+
+  @include vp-1600 {
+    max-width: 420px;
+  }
+
+  @include vp-1439 {
+    max-width: 400px;
+  }
+
+  @include vp-1279 {
+    max-width: 320px;
+    font-size: 16px;
+  }
+
+  @include vp-1023 {
+    max-width: 320px;
+  }
+
+  @include vp-575 {
+    max-width: 100%;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 32px;
+  }
+
+  .primary-btn {
+    margin-top: auto;
+  }
+
+  .primary-title {
+    @include vp-575 {
+      max-width: 275px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.main-banner__descr {
+  @include vp-575 {
+    text-align: center;
+    max-width: 320px;
+  }
+}
+
+.main-banner__wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 0 0 100px 100px;
+  border-bottom: 1px solid $color-default-white;
+  box-shadow: 0 4px 110px 0 rgba(10, 10, 13, 0.7);
+  z-index: 5;
+
+  
+  @include vp-575 {
+    border-radius: 0 0 50px 50px;
+  }
+}
+
+.main-banner__cristal {
+  position: absolute;
+  left: -40px;
+  top: 300px;
+  z-index: 3;
+
+  @include vp-992 {
+    top: 160px;
+    left: -220px;
+  }
+
+  @include vp-575 {
+    max-width: none;
+    top: 180px;
+    left: -340px;
+  }
+
+  &--one {
+    top: 40px;
+    left: calc(50% - 40px);
+
+    @include vp-575 {
+      top: 120px;
+      left: initial;
+      right: -40px;
+    }
+  }
+
+  &--two {
+    left: initial;
+    top: initial;
+    right: 0;
+    bottom: -20px;
+
+    @include vp-992 {
+      bottom: -180px;
+      right: -120px;
+    }
+  }
+
+  &--three {
+    left: initial;
+    top: initial;
+    right: 300px;
+    bottom: 60px;
+
+    @include vp-575 {
+      display: none;
+    }
+  }
+
+  &--four {
+    left: initial;
+    top: calc(50% - 40px);
+    right: 50px;
+    transform: scaleX(-1);
+
+    @include vp-1600 {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.age-warning {
+
+  .modal__wrapper {
+    padding: 0;
+  }
+
+  .modal__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+  }
+}
+
+.modal__content {
+  .logo {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.modal.age-warning {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1000;
+  transform: none;
+}
+
+.age-warning.is-active {
+  transition: visibility .6s cubic-bezier(.55,0,.1,1);
+}
+
+.modal.age-warning.success {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 0;
+}
+
+
+.age-warning__background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}

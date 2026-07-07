@@ -1,0 +1,1243 @@
+.history {
+  min-height: 4300px;
+
+  @media (max-width: 400px) {
+    min-height: 3900px;
+  }
+
+  @include vp-375 {
+    min-height: 4005px;
+  }
+}
+
+.history__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4502px;
+  object-fit: cover;
+
+  @include vp-1600 {
+    top: -140px;
+  }
+
+  @include vp-1439 {
+    top: -80px;
+  }
+
+  @media (max-width: 400px) {
+    height: 4005px;
+    max-width: none;
+    width: 700px;
+    left: -174px;
+  }
+
+  @include vp-375 {
+    display: none;
+  }
+
+  @include vp-374 {
+    left: -196px;
+  }
+}
+
+.history__background-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3997px;
+  display: none;
+
+  @include vp-375 {
+    display: block;
+  }
+}
+
+.history__container {
+  position: relative;
+  flex: 1;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.history__title {
+  position: absolute;
+  top: -539px;
+  left: 0;
+  width: 780px;
+  height: 780px;
+
+  span {
+    font-weight: 700;
+    font-size: 24px;
+    color: $color-default-white;
+  }
+
+  @include vp-1600 {
+    top: -510px;
+    left: -10px;
+  }
+
+  @include vp-1439 {
+    top: -500px;
+    left: -80px;
+  }
+
+  @include vp-1279 {
+    left: -160px;
+    top: -530px;
+  }
+
+  @include vp-1023 {
+    left: -214px;
+  }
+
+  @include vp-992 {
+    left: calc(50% - 390px);
+  }
+
+  @include vp-575 {
+    top: -580px;
+  }
+
+  img:first-child {
+    @include vp-575 {
+      max-width: 257px;
+    }
+  }
+}
+
+.history__title-cont {
+  width: 100%;
+  height: 100%;
+  justify-content: end;
+  padding-bottom: 45px;
+
+  span {
+    text-transform: uppercase;
+    font-style: italic;
+  }
+}
+
+.history__content {
+  position: relative;
+  display: flex;
+  z-index: 10;
+  color: $color-default-white;
+
+  .history__subtitle {
+    max-width: 464px;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-style: italic;
+
+    @include vp-992 {
+      margin-left: 62px;
+      align-self: center;
+      max-width: 332px;
+      font-size: 20px;
+    }
+
+    @include vp-575 {
+      align-self: start;
+      margin-left: 0;
+      font-size: 16px;
+    }
+  }
+}
+
+.history__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  z-index: 15;
+
+  @include vp-992 {
+    font-size: 16px;
+  }
+
+  @include vp-374 {
+    font-size: 14px;
+  }
+
+  p {
+    font-family: $ff-inter;
+  }
+
+  h3 {
+    font-family: $ff-inter;
+    font-size: 28px;
+    font-weight: 400;
+  }
+}
+
+.history__img-group {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+
+  img {
+    max-width: 227px;
+    object-fit: contain;
+  }
+}
+
+.cont-1 {
+  margin-top: 285px;
+  padding-left: 215px;
+
+  @include vp-1600 {
+    margin-top: 300px;
+    padding-left: 185px;
+  }
+
+  @include vp-1439 {
+    margin-top: 370px;
+    padding-left: 140px;
+  }
+
+  @include vp-1279 {
+    margin-top: 290px;
+    padding-left: 50px;
+  }
+
+  @include vp-1023 {
+    padding-left: 0;
+  }
+
+  .history__card {
+    @include vp-1439 {
+      margin-top: 40px;
+      padding-left: 60px;
+    }
+
+    @include vp-1279 {
+      padding-left: 90px;
+    }
+
+    @include vp-1023 {
+      margin-top: 80px;
+      padding-left: 0;
+    }
+
+    @include vp-992 {
+      margin-top: 100px;
+    }
+
+    @include vp-575 {
+      margin-top: 100px;
+    }
+  }
+
+  p {
+    max-width: 380px;
+
+    &:last-child {
+      max-width: 458px;
+    }
+
+    @include vp-1439 {
+      position: relative;
+      top: -40px;
+    }
+
+    @include vp-1023 {
+      top: -20px;
+    }
+  }
+
+  .second-title {
+    @media (max-width: 1180px) {
+      font-size: 52px;
+    }
+
+    @include vp-1023 {
+      font-size: 48px;
+    }
+
+    @include vp-992 {
+      align-self: center;
+      max-width: 340px;
+      font-size: 32px;
+    }
+
+    @include vp-575 {
+      align-self: start;
+      font-size: 28px;
+    }
+  }
+
+  .history__card-img {
+    @include vp-575 {
+      min-width: 269px;
+    }
+  }
+}
+
+.cont-2 {
+  margin-top: 360px;
+
+  p,
+  h3 {
+    position: relative;
+    top: -90px;
+    z-index: 4;
+  }
+
+  @include vp-1600 {
+    margin-top: 220px;
+  }
+
+  @include vp-1439 {
+    margin-top: 260px;
+  }
+
+  @include vp-1279 {
+    margin-top: 320px;
+  }
+
+  @media (max-width: 1100px) {
+    margin-top: 300px;
+  }
+
+  @include vp-1023 {
+    margin-top: 280px;
+  }
+
+  @include vp-992 {
+    margin-top: 340px;
+  }
+
+  @include vp-575 {
+    margin-top: 460px;
+  }
+
+  @media (max-width: 400px) {
+    margin-top: 220px;
+  }
+
+  @include vp-375 {
+    margin-top: 200px;
+  }
+
+  @include vp-374 {
+    margin-top: 280px;
+  }
+
+  @media (max-width: 326px) {
+    margin-top: 180px;
+  }
+
+  h3 {
+    @include vp-992 {
+      font-size: 24px;
+    }
+
+    @include vp-575 {
+      width: 100%;
+    }
+  }
+
+  .history__card-img {
+
+    @include vp-575 {
+      max-width: 181px;
+    }
+  }
+}
+
+.cont-3 {
+  margin-top: 160px;
+
+  @media (max-width: 1100px) {
+    margin-top: 100px;
+  }
+
+  @include vp-1023 {
+    margin-top: 90px;
+  }
+
+  @include vp-992 {
+    margin-top: 130px;
+  }
+
+  @include vp-575 {
+    margin-top: 160px;
+  }
+
+  @media (max-width: 500px) {
+    margin-top: 150px;
+  }
+
+  @media (max-width: 400px) {
+    margin-top: 90px;
+  }
+
+  @include vp-375 {
+    margin-top: 160px;
+  }
+
+  @include vp-374 {
+    margin-top: 140px;
+  }
+
+  @media (max-width: 325px) {
+    margin-top: 200px;
+  }
+
+  @media (max-width: 323px) {
+    margin-top: 140px;
+  }
+
+  .history__card {
+    position: relative;
+    padding-left: 200px;
+
+    @include vp-1600 {
+      padding-left: 140px;
+    }
+
+    @include vp-1439 {
+      padding-left: 120px;
+    }
+
+    @include vp-1279 {
+      padding-left: 60px;
+    }
+
+    @include vp-767 {
+      padding-left: 0;
+      width: 100%;
+      max-width: 560px;
+    }
+
+    @include vp-575 {
+      max-width: 600px;
+    }
+  }
+
+  .history__card-img {
+    position: absolute;
+    top: 40px;
+    left: 200px;
+    z-index: 3;
+
+    @include vp-1600 {
+      left: 140px;
+    }
+
+    @include vp-1439 {
+      left: 120px;
+    }
+
+    @include vp-1279 {
+      left: 60px;
+    }
+
+    @include vp-767 {
+      left: 20px;
+      min-width: 300px;
+      max-width: 300px;
+    }
+
+    @include vp-575 {
+      left: 0;
+    }
+  }
+
+  p {
+    margin-top: 260px;
+    z-index: 10;
+
+    @include vp-767 {
+      margin-top: 230px;
+    }
+
+    @include vp-575 {
+      min-width: 320px;
+    }
+
+    @media (max-width: 400px) {
+      min-width: 200px;
+    }
+
+    @include vp-375 {
+      min-width: 220px;
+    }
+
+    @media (max-width: 325px) {
+      min-width: 180px;
+    }
+  }
+
+  .nameplate {
+    position: relative;
+    left: -40px;
+
+    @include vp-767 {
+      left: 0;
+    }
+
+    @include vp-575 {
+      font-size: 16px;
+      left: 40px;
+      top: 10px;
+    }
+  }
+}
+
+.cont-4 {
+  margin-top: 260px;
+
+  @include vp-1279 {
+    margin-top: 200px;
+  }
+
+  @include vp-992 {
+    margin-top: 300px;
+  }
+
+  @include vp-767 {
+    margin-top: 340px;
+  }
+
+  @include vp-575 {
+    margin-top: 260px;
+  }
+
+  @media (max-width: 500px) {
+    margin-top: 240px;
+  }
+
+  @media (max-width: 400px) {
+    padding-left: 20px;
+    margin-top: 180px;
+  }
+
+  @include vp-375 {
+    margin-top: 240px;
+  }
+
+  @include vp-374 {
+    margin-top: 280px;
+  }
+
+  .nameplate {
+    font-size: 18px;
+
+    @include vp-992 {
+      position: absolute;
+      top: -40px;
+      width: 100%;
+      left: 150px;
+    }
+
+    @include vp-767 {
+      left: calc(50% - 150px);
+    }
+
+    @include vp-575 {
+      font-size: 16px;
+      left: 40px;
+    }
+
+    @media (max-width: 500px) {
+      left: 0;
+    }
+  }
+
+  p {
+    position: relative;
+    top: -36px;
+
+    @include vp-575 {
+      left: 30px;
+    }
+  }
+
+  .history__card {
+    @include vp-992 {
+      padding-left: 60px;
+    }
+
+    @include vp-767 {
+      padding-left: 40px;
+    }
+
+    @include vp-575 {
+      padding-left: 0;
+    }
+  }
+
+  .history__img-group {
+    @include vp-767 {
+      img:first-child {
+        position: relative;
+        z-index: 20;
+      }
+
+      img:last-child {
+        position: relative;
+        z-index: 30;
+        left: -40px;
+      }
+    }
+  }
+
+  .history__card-img {
+    @include vp-767 {
+      max-width: 161px;
+    }
+  }
+}
+
+.cont-5 {
+  margin-top: 240px;
+
+  @include vp-1439 {
+    margin-top: 200px;
+  }
+
+  @include vp-1279 {
+    margin-top: 180px;
+  }
+
+  @media (max-width: 1100px) {
+    margin-top: 220px;
+  }
+
+  @include vp-992 {
+    margin-top: 0px;
+  }
+
+  @include vp-767 {
+    margin-top: 280px;
+  }
+
+  @media (max-width: 500px) {
+    margin-top: 260px;
+  }
+
+  @media (max-width: 400px) {
+    margin-top: 260px;
+  }
+
+  @include vp-375 {
+    margin-top: 300px;
+  }
+
+  .nameplate {
+    display: block;
+    font-size: 18px;
+    line-height: 1;
+
+    b {
+      display: block;
+      font-size: 14px;
+    }
+
+    @include vp-992 {
+      position: absolute;
+      top: -30px;
+      left: 70px;
+    }
+
+    @include vp-767 {
+      width: 100%;
+      left: 20px;
+    }
+
+    @include vp-575 {
+      font-size: 16px;
+    }
+
+    @media (max-width: 500px) {
+      top: -5px;
+    }
+
+    @media (max-width: 400px) {
+      top: -5px;
+    }
+
+    @media (max-width: 340px) {
+      top: 10px;
+    }
+  }
+
+  p {
+    position: relative;
+    top: -50px;
+
+    @include vp-992 {
+      max-width: 360px;
+    }
+
+    @include vp-767 {
+      top: 0;
+      margin-bottom: 60px;
+      max-width: 220px;
+    }
+  }
+
+  .history__card {
+    position: relative;
+    z-index: 15;
+    padding-left: 320px;
+
+    @include vp-1600 {
+      padding-left: 220px;
+    }
+
+    @include vp-1439 {
+      padding-left: 200px;
+    }
+
+    @include vp-1279 {
+      padding-left: 100px;
+    }
+
+    @media (max-width: 1100px) {
+      padding-left: 50px;
+    }
+
+    @include vp-1023 {
+      padding-left: 0;
+    }
+
+    @include vp-767 {
+      flex-direction: column-reverse;
+
+    }
+  }
+
+  .history__img-group {
+    @include vp-992 {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 500px) {
+      column-gap: 4px;
+    }
+
+    div {
+      position: relative;
+
+      @include vp-992 {
+        position: relative;
+      }
+
+      &:first-child {
+        width: 100%;
+        z-index: 10;
+
+        @include vp-767 {
+          width: max-content;
+        }
+      }
+
+      &:nth-child(2) {
+
+        @include vp-767 {
+          z-index: 15;
+          margin-top: 40px;
+        }
+
+        @include vp-575 {
+          z-index: 15;
+          left: -60px;
+        }
+
+        @media (max-width: 500px) {
+          left: -40px;
+          width: 50%;
+
+          .history__card-img {
+            padding-left: 0;
+          }
+        }
+      }
+
+      &:last-child {
+
+        @include vp-767 {
+          width: 50%;
+        }
+
+        @include vp-575 {
+          top: -20px;
+        }
+
+        @media (max-width: 500px) {
+          top: -50px;
+        }
+
+        @media (max-width: 340px) {
+          top: -50px;
+        }
+
+        .nameplate {
+          top: -40px;
+
+          @media (max-width: 500px) {
+            top: -20px;
+          }
+
+          @media (max-width: 340px) {
+            top: -20px;
+          }
+        }
+
+        .history__card-img {
+          @media (max-width: 500px) {
+            top: -90px;
+            min-width: 130px;
+            max-width: 130px;
+          }
+        }
+      }
+    }
+  }
+
+  .history__img-group img {
+    @include vp-1439 {
+      min-width: 200px;
+      max-width: 200px;
+      height: 320px;
+    }
+
+    @include vp-992 {
+      min-width: 216px;
+      max-width: 216px;
+      height: 338px;
+    }
+
+    @include vp-767 {
+      min-width: 191px;
+      max-width: 191px;
+      height: 271px;
+    }
+
+    @media (max-width: 500px) {
+      min-width: 150px;
+      max-width: 150px;
+    }
+
+    @media (max-width: 340px) {
+      min-width: 130px;
+      max-width: 130px;
+    }
+  }
+}
+
+.history__title-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  @include vp-575 {
+    top: 20px;
+    left: 60px;
+  }
+}
+
+.history__decoration-snake {
+  position: absolute;
+  top: -200px;
+  right: -300px;
+  z-index: 1;
+
+  @include vp-1600 {
+    right: -500px;
+    top: -200px;
+    transform: rotate(10deg);
+  }
+
+  @media (max-width: 1280px) {
+    top: -80px;
+    right: -570px;
+    transform: rotate(40deg);
+  }
+
+  @include vp-1279 {
+    top: -200px;
+    right: -560px;
+    transform: rotate(34deg);
+  }
+
+  @include vp-1023 {
+    right: -600px;
+    top: -70px;
+  }
+
+  @include vp-992 {
+    display: none;
+  }
+
+  &--two {
+    right: inherit;
+    left: -360px;
+    top: 660px;
+
+    @include vp-1600 {
+      top: 1100px;
+      left: -360px;
+      transform: rotate(-20deg);
+    }
+
+    @include vp-1439 {
+      left: -390px;
+      transform: rotate(0deg);
+    }
+
+    @include vp-1279 {
+      left: -460px;
+      top: 900px;
+    }
+
+    @include vp-1023 {
+      top: 1200px;
+      left: -400px;
+    }
+
+    @include vp-992 {
+      display: block;
+      top: 1340px;
+      left: -500px;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &--three {
+    top: initial;
+    bottom: 400px;
+    right: -700px;
+    transform: rotate(70deg);
+
+    @include vp-1600 {
+      right: -560px;
+      bottom: 500px;
+      transform: rotateX(180deg) rotate(90deg);
+    }
+
+    @include vp-1279 {
+      right: -700px;
+    }
+  }
+}
+
+.history__decoration-image {
+  position: absolute;
+  z-index: 3;
+  top: 260px;
+  right: 140px;
+
+  @include vp-1600 {
+    right: -80px;
+    top: 280px;
+  }
+
+  
+  @media (max-width: 1280px) {
+    right: -180px;
+    top: 280px;
+  }
+
+  @include vp-1279 {
+    right: -200px;
+    top: 280px;
+  }
+
+  @include vp-1023 {
+    max-width: 363px;
+    right: -100px;
+    top: 500px;
+  }
+
+  @include vp-992 {
+    right: -210px;
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.history__decoration-tire {
+  position: absolute;
+  top: 800px;
+  left: calc(60% + 30px);
+  z-index: 1;
+
+  @include vp-1600 {
+    top: 780px;
+    left: calc(60% + 60px);
+  }
+
+  @include vp-1279 {
+    left: calc(60% + 120px);
+  }
+
+  @include vp-992 {
+    left: calc(70% + 60px);
+  }
+
+  @include vp-767 {
+    left: initial;
+    right: -34px;
+  }
+
+  @media (max-width: 400px) {
+    top: 740px;
+    right: -30px;
+  }
+
+  @include vp-375 {
+    top: 720px;
+  }
+
+  @include vp-374 {
+    max-width: 50px;
+  }
+
+  &--two {
+    top: 1240px;
+    left: 35%;
+
+    @include vp-1600 {
+      top: 1160px;
+      left: 32%;
+    }
+
+    @include vp-1439 {
+      top: 1220px;
+    }
+
+    @include vp-1279 {
+      left: 28%;
+    }
+
+    @include vp-1023 {
+      left: 24%;
+    }
+
+    @include vp-992 {
+      left: 20%;
+    }
+
+    @include vp-767 {
+      left: -30px;
+    }
+
+    @media (max-width: 400px) {
+      top: 1060px;
+    }
+
+    @include vp-375 {
+      top: 1050px;
+    }
+  }
+
+  &--three {
+    top: 1760px;
+    left: 35%;
+
+    @include vp-1600 {
+      top: 1600px;
+      left: 32%;
+    }
+
+    @include vp-1439 {
+      top: 1640px;
+    }
+
+    @include vp-1279 {
+      left: 28%;
+    }
+
+    @include vp-1023 {
+      left: 24%;
+    }
+
+    @include vp-992 {
+      left: 20%;
+    }
+
+    @include vp-767 {
+      left: -30px;
+    }
+
+    @media (max-width: 400px) {
+      top: 1460px;
+    }
+
+    @include vp-375 {
+      top: 1460px;
+    }
+  }
+
+  &--four {
+    top: 2500px;
+    left: 35%;
+
+    @include vp-1600 {
+      left: 32%;
+    }
+
+    @include vp-1279 {
+      left: 28%;
+    }
+
+    @include vp-1023 {
+      left: 24%;
+    }
+
+    @include vp-992 {
+      left: 20%;
+    }
+
+    @include vp-767 {
+      left: -30px;
+    }
+
+    @media (max-width: 400px) {
+      top: 2200px;
+    }
+
+    @include vp-375 {
+      top: 2200px;
+    }
+  }
+
+  &--five {
+    top: initial;
+    bottom: 260px;
+    left: 40%;
+
+    @include vp-1600 {
+      bottom: 380px;
+    }
+
+    @include vp-1279 {
+      left: 36%;
+    }
+
+    @include vp-1023 {
+      left: 32%;
+    }
+
+    @include vp-767 {
+      left: initial;
+      right: -30px;
+    }
+
+    @media (max-width: 400px) {
+      bottom: 400px;
+    }
+
+    @include vp-375 {
+      bottom: 240px;
+    }
+  }
+}
+
+.history__decoration-tree {
+  position: absolute;
+  bottom: -260px;
+  left: -360px;
+  z-index: 1;
+
+  @include vp-1600 {
+    bottom: -680px;
+    left: -420px;
+  }
+
+  @include vp-1439 {
+    left: -480px;
+  }
+
+  @include vp-1279 {
+    left: -600px;
+  }
+
+  @include vp-1023 {
+    bottom: -740px;
+    left: -540px;
+  }
+
+  @include vp-992 {
+    display: none;
+  }
+
+  &--right {
+    left: initial;
+    right: -100px;
+    bottom: 1800px;
+
+    @include vp-1439 {
+      right: -200px;
+    }
+
+    @include vp-1279 {
+      right: -300px;
+    }
+
+    @include vp-1023 {
+      bottom: initial;
+      top: 300px;
+      right: -240px;
+    }
+  }
+}
+
+.history__decoration-human {
+  position: absolute;
+  left: 56%;
+  bottom: 250px;
+  z-index: 1;
+
+  @include vp-1279 {
+    left: 60%;
+  }
+
+  @include vp-1023 {
+    left: 65%;
+    bottom: 200px;
+  }
+
+  @include vp-992 {
+    left: initial;
+    right: 0;
+  }
+
+  @include vp-767 {
+    right: inherit;
+    left: 0;
+    bottom: 160px;
+    transform: rotateY(180deg) !important;
+  }
+
+  @include vp-575 {
+    left: -160px;
+    bottom: 80px;
+  }
+
+  @include vp-375 {
+    z-index: 100;
+  }
+}

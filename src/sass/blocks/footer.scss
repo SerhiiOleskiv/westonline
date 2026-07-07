@@ -1,0 +1,61 @@
+.footer {
+  padding-top: 100px;
+  padding-bottom: 32px;
+  color: $color-suva-grey;
+
+  @include vp-1023 {
+    padding-top: 68px;
+  }
+
+  .logo {
+    width: max-content;
+    max-width: 100%;
+    @include vp-1023 {
+      align-self: center;
+    }
+  }
+
+  .container {
+    margin: 0;
+    padding: 0 100px;
+
+    @include vp-1439 {
+      padding: 0 50px;
+    }
+
+    @include vp-1279 {
+      padding: 0 30px;
+    }
+
+    @include vp-1023 {
+      padding: 0 24px;
+    }
+  }
+}
+
+.footer__content {
+  display: flex;
+  column-gap: 64px;
+
+  @include vp-1023 {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 32px;
+  }
+}
+
+.footer__menu {
+  display: flex;
+  flex-direction: column;
+  max-width: 220px;
+  row-gap: 12px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  @include vp-1023 {
+    max-width: 343px;
+    text-align: center;
+    align-items: center;
+  }
+}

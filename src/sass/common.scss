@@ -1,0 +1,257 @@
+body {
+  font-family: $ff-main;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+b {
+  font-weight: 600;
+}
+
+.wrapper {
+  overflow-x: hidden;
+  background-color: #333333;
+}
+
+.container {
+  max-width: 1720px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.neon-link {
+  position: relative;
+  display: block;
+  padding: 10px 40px;
+  font-family: $ff-play;
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+  color: $color-default-white;
+  font-style: italic;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-default-black;
+    z-index: -1;
+    transform: skew(-20deg);
+    border: 2px solid $color-default-white;
+    box-shadow: 0 0 3px #fff,
+      0 0 3px #fff,
+      0 0 15px $color-old-rose,
+      0 0 10px $color-old-rose,
+      0 0 32px $color-old-rose,
+      inset 0 0 14px $color-old-rose;
+    transition: box-shadow .3s ease;
+  }
+
+  @include vp-1023 {
+    font-size: 22px;
+    padding: 9px 20px;
+  }
+
+  @include vp-575 {
+    font-size: 20px;
+  }
+
+  @include vp-374 {
+    padding: 8px 10px;
+  }
+
+  @include hover {
+    &::before {
+      box-shadow: 0 0 3px #fff,
+        0 0 10px #fff,
+        0 0 30px $color-old-rose,
+        0 0 70px $color-old-rose,
+        0 0 100px $color-old-rose,
+        inset 0 0 14px $color-old-rose;
+    }
+  }
+
+  @include hover-focus {
+    &::before {
+      box-shadow: 0 0 3px #fff,
+        0 0 10px #fff,
+        0 0 30px $color-old-rose,
+        0 0 70px $color-old-rose,
+        0 0 100px $color-old-rose,
+        inset 0 0 14px $color-old-rose;
+    }
+  }
+}
+
+.sign-word {
+  animation: 2s neon-2 alternate-reverse infinite;
+}
+
+@keyframes neon-2 {
+  from {
+    text-shadow: 0 0 1px $color-old-rose,
+      0 0 2px $color-old-rose,
+      0 0 4px $color-old-rose,
+      0 0 6px $color-old-rose;
+  }
+
+  to {
+    text-shadow: 0 0 10px $color-old-rose,
+      0 0 10px $color-old-rose,
+      0 0 20px $color-old-rose,
+      0 0 10px $color-old-rose,
+      0 0 100px $color-old-rose;
+  }
+}
+
+.primary-btn {
+  position: relative;
+  padding: 16px 54px;
+  font-family: $ff-main;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  color: $color-default-white;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-electric-indigo;
+    z-index: -1;
+    border-radius: 8px;
+    transform: skew(-10deg);
+    transition: background-color .2s ease;
+  }
+
+
+  @include hover {
+    &::before {
+      background-color: $color-indigo;
+    }
+  }
+
+  @include hover-focus {
+    &::before {
+      background-color: $color-indigo;
+    }
+  }
+
+  &--gray {
+    color: $color-default-black;
+    &::before {
+      background-color: $color-default-white;
+    }
+
+    @include hover {
+      &::before {
+        background-color: rgba($color-default-white, .8);
+      }
+    }
+
+    @include hover-focus {
+      &::before {
+        background-color: rgba($color-default-white, .8);
+      }
+    }
+  }
+
+
+  @include vp-1023 {
+    font-size: 16px;
+  }
+}
+
+.primary-title {
+  font-family: $ff-play;
+  font-size: 80px;
+  font-weight: 700;
+  color: $color-default-white;
+  text-transform: uppercase;
+  line-height: 1;
+
+  @include vp-1600 {
+    font-size: 72px;
+  }
+
+  @include vp-1279 {
+    font-size: 56px;
+  }
+}
+
+
+.primary-link {
+  font-size: 12px;
+  color: $color-suva-grey;
+  padding-bottom: 1px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  line-height: 1.5;
+}
+
+.copyright {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  @include vp-1023 {
+    text-align: center;
+  }
+}
+
+.second-title {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: $color-default-white;
+  font-style: italic;
+}
+
+.nameplate {
+  font-family: $ff-main;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $color-suva-grey;
+  font-style: italic;
+}
+
+.decoration-img {
+  position: absolute;
+  bottom: -120px;
+  left: -200px;
+  max-width: none;
+  z-index: 60;
+
+  @include vp-375 {
+    bottom: -180px;
+  }
+}
+
+.empty-stub {
+  @include vp-992 {
+    display: none;
+  }
+}
+
+.finish {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 103vw;
+  z-index: 6;
+}
+
+.finish__img {
+  width: 103vw;
+}

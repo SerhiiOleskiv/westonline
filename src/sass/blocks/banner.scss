@@ -1,0 +1,269 @@
+.banner {
+  position: relative;
+  min-height: calc(100vh - 76px);
+  max-height: calc(100vh - 76px);
+  margin-top: 76px;
+
+  @include vp-767 {
+    margin-top: 56px;
+    min-height: calc(100vh - 56px);
+    max-height: calc(100vh - 56px);
+  }
+}
+
+.banner__container {
+  position: relative;
+  padding-top: 80px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 80px);
+
+  @include vp-1600 {
+    padding-top: 62px;
+  }
+
+  @include vp-1279 {
+    padding-top: 40px;
+  }
+
+  @include vp-1023 {
+    justify-content: end;
+  }
+
+  @include vp-575 {
+    justify-content: center;
+  }
+
+  @media only screen and (min-height: 960px) and (max-width: 1536px) {
+    padding-top: 10px;
+    justify-content: end;
+  }
+}
+
+.banner__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.banner__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+
+
+  @media (max-height: 700px) {
+    object-fit: none;
+  }
+
+
+  @include vp-767 {
+    object-fit: cover;
+  }
+}
+
+.banner__title-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 490px;
+  height: 174px;
+  padding-top: 20px;
+  font-family: $ff-play;
+  color: $color-default-white;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  font-style: italic;
+
+  @include vp-1279 {
+    width: 435px;
+    height: 180px;
+    padding-top: 30px;
+    font-size: 16px;
+  }
+
+  @include vp-1023 {
+    margin-left: 100px;
+    width: 383px;
+    height: 140px;
+    padding-top: 14px;
+  }
+
+  @include vp-767 {
+    margin-left: 0;
+  }
+
+  @include vp-575 {
+    width: 343px;
+    height: 132px;
+  }
+
+  @include vp-374 {
+    height: 120px;
+  }
+}
+
+.banner__neon-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: drop-shadow(0 0 71px rgba(171, 165, 255, 0.95));
+
+  @media (max-width: 400px) {
+    max-width: 324px;
+    left: calc(50% - 162px);
+  }
+
+  @include vp-374 {
+    width: 300px;
+    left: calc(50% - 150px);
+  }
+}
+
+.banner__sub-title {
+  position: absolute;
+  width: 338px;
+  height: 50px;
+  align-items: center;
+  bottom: -24px;
+  left: calc(50% - 169px);
+  display: flex;
+
+  h2 {
+    text-shadow: 0 0 2px #fff, 
+             1px 1px 0 rgba(2, 2, 27, 0.55),
+             2px 2px 1px rgba(2, 2, 27, 0.55),
+             2px 2px 2px rgba(2, 2, 27, 0.55);
+  }
+
+  @include vp-1279 {
+    width: 304px;
+    left: calc(50% - 158px);
+  }
+
+  @include vp-1023 {
+    left: calc(50% - 140px);
+    font-size: 15px;
+    width: 270px;
+  }
+
+  @include vp-575 {
+    width: 240px;
+    left: calc(50% - 126px);
+    font-size: 14px;
+  }
+
+  .banner__neon-bg {
+    @media (max-width: 400px) {
+      max-width: 240px;
+      left: calc(50% - 120px);
+    }
+  }
+}
+
+.banner__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner__title-img {
+  display: block;
+  max-width: 384px;
+
+  @include vp-1279 {
+    max-width: 346px;
+  }
+
+  @include vp-1023 {
+    max-width: 306px;
+  }
+
+  @include vp-575 {
+    max-width: 272px;
+  }
+
+  @include vp-374 {
+    max-width: 220px;
+  }
+
+  &--second {
+    max-width: 370px;
+
+    @include vp-1279 {
+      max-width: 330px;
+    }
+
+    @include vp-1023 {
+      max-width: 298px;
+    }
+
+    @include vp-575 {
+      max-width: 264px;
+    }
+
+    @include vp-374 {
+      max-width: 200px;
+    }
+  }
+}
+
+.banner__link {
+  position: absolute;
+  bottom: 80px;
+  left: 89px;
+
+  @include vp-1600 {
+    bottom: 45px;
+  }
+
+  @include vp-1439 {
+    left: 60px;
+  }
+
+  @include vp-1279 {
+    left: 30px;
+  }
+
+  @include vp-1023 {
+    bottom: 32px;
+  }
+
+  @media (max-width: 768px) {
+    bottom: initial;
+    left: inherit;
+    right: 36px;
+    top: 220px;
+  }
+
+  @include vp-575 {
+    top: 200px;
+    right: calc(50% - 150px);
+  }
+
+  @include vp-374 {
+    font-size: 14px;
+    right: calc(50% - 100px);
+  }
+
+  @media only screen and (min-height: 960px) and (max-width: 1536px) {
+    bottom: initial;
+    left: inherit;
+    right: 36px;
+    top: 220px;
+  }
+}

@@ -1,0 +1,50 @@
+.in-site {
+  position: absolute;
+  bottom: 80px;
+  right: 80px;
+  display: flex;
+
+  @include vp-1600 {
+    bottom: 45px;
+  }
+
+  @include vp-1439 {
+    right: 40px;
+  }
+
+  @include vp-1279 {
+    right: 28px;
+  }
+
+  @include vp-1023 {
+    bottom: 32px;
+    right: 24px;
+  }
+
+  @media (max-width: 768px) {
+    right: calc(50% - 112px);
+    bottom: 24px;
+  }
+
+  @media only screen and (min-height: 960px) and (max-width: 1536px) {
+    right: calc(50% - 112px);
+    bottom: 24px;
+  }
+
+  .primary-btn {
+    @include vp-767 {
+      padding: 16px 30px;
+    }
+  }
+}
+
+.in-site__logo {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  
+  @include vp-767 {
+    top: -80px;
+    width: 204px;
+  }
+}

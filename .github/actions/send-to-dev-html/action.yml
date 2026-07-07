@@ -1,0 +1,37 @@
+name: 'Deploy to DEV HTML server'
+description: 'Deploys to the DEV HTML server'
+
+inputs:
+  dev_ssh_private_key:
+    description: 'SSH private key for DEV server'
+    required: true
+  html_project_folder:
+    description: 'Project folder'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Deploy
+      shell: bash
+      env:
+        HTML_SSH_PRIVATE_KEY: ${{ inputs.dev_ssh_private_key }}
+        HTML_HOST: 109.199.118.40
+        HTML_USER: bitrix
+        HTML_BASE_PATH: /home/bitrix/ext_www/html-agency.ru
+        HTML_PROJECT_FOLDER: ${{ inputs.html_project_folder }}
+      run: |
+        set -e  # Прерывание при ошибке
+        echo "$HTML_SSH_PRIVATE_KEY" > private_key_html.pem
+        chmod 600 private_key_html.pem
+        mkdir -p ~/.ssh
+        ssh-keyscan -H $HTML_HOST >> ~/.ssh/known_hosts
+
+        BRANCH_NAME=${GITHUB_REF##*/}
+        TARGET_PATH="$HTML_BASE_PATH$HTML_PROJECT_FOLDER/$BRANCH_NAME"
+
+        ssh -i private_key_html.pem $HTML_USER@$HTML_HOST "mkdir -p $TARGET_PATH" || { echo "SSH command failed"; exit 1; }
+
+        rsync -avz --delete -e "ssh -i private_key_html.pem" ./public/ $HTML_USER@$HTML_HOST:$TARGET_PATH/ || { echo "Rsync command failed"; exit 1; }
+
+        rm private_key_html.pem  # Удаление временного файла

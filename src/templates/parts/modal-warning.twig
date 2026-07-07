@@ -1,0 +1,39 @@
+<div class="modal modal--preload age-warning" data-modal="warning">
+  <div class="modal__wrapper">
+      <div class="modal__overlay" data-close-modal></div>
+      <div class="modal__content">
+
+          <section class="warning relative">
+            <div class="warning__header flex justify-center">
+              <a href="#" class="logo">
+                <img src="./assets/image/logo.svg" alt="Логотип торговой марки Манчестер">
+              </a>
+            </div>
+              <img class="warning__decoration" src="./assets/image/decoration/warning.webp" alt="Декоративное изображение">
+            <div class="container warning__container flex flex-col items-center">
+              <div class="warning__answer opacity-0" id="warning-answer">
+                сообщение о невозможности просмотра контента!
+              </div>
+              <h1 class="warning__title mb-8">
+                Доступ на веб-сайт разрешён только гражданам РФ старше 18 лет, являющимся потребителями табака.
+              </h1>
+              <span class="warning__description mb-8">
+                Я подтверждаю, что мне есть 18 лет и я являюсь потребителем табака.
+              </span>
+              <div class="flex gap-x-1">
+                <button class="warning__btn primary-btn primary-btn--gray" id="warning-btn">
+                  Нет
+                </button>
+                <button class="btn-reset primary-btn" id="warning-close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
+                  Да
+              </button>
+              </div>
+            </div>
+          </section>
+          <picture>
+            <source media="(max-width: 576px)" srcset="./assets/image/content/warning-fone-576.webp">
+            <img class="age-warning__background" src="./assets/image/content/warning-fone.webp" alt="Фоновое изображение секции баннера торговой марки West">
+          </picture>
+      </div>
+  </div>
+</div>

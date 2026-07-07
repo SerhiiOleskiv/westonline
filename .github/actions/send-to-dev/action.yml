@@ -1,0 +1,41 @@
+name: 'Deploy to DEV server'
+description: 'Deploys to the DEV server'
+
+inputs:
+  prod_ssh_private_key:
+    description: 'SSH private key for PROD server'
+    required: true
+  prod_host:
+    description: 'SSH host'
+    required: true
+  prod_user:
+    description: 'SSH user'
+    required: true
+  dev_base_path:
+    description: 'Base path on the DEV server'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Deploy
+      shell: bash
+      env:
+        DEV_SSH_PRIVATE_KEY: ${{ inputs.prod_ssh_private_key }}
+        DEV_HOST: ${{ inputs.prod_host }}
+        DEV_USER: ${{ inputs.prod_user }}
+        DEV_BASE_PATH: ${{ inputs.dev_base_path }}
+      run: |
+        set -e  # Прерывание при ошибке
+        echo "$DEV_SSH_PRIVATE_KEY" > private_key_dev.pem
+        chmod 600 private_key_dev.pem
+        mkdir -p ~/.ssh
+        ssh-keyscan -H $DEV_HOST >> ~/.ssh/known_hosts
+
+        ssh -i private_key_dev.pem $DEV_USER@$DEV_HOST "mkdir -p $DEV_BASE_PATH/assets/ $DEV_BASE_PATH/css/ $DEV_BASE_PATH/js/" || { echo "SSH command failed"; exit 1; }
+
+        rsync -avz --delete -e "ssh -i private_key_dev.pem" ./public/assets/ $DEV_USER@$DEV_HOST:$DEV_BASE_PATH/assets/ || { echo "Rsync О ASSETS command failed"; exit 1; }
+        rsync -avz --delete -e "ssh -i private_key_dev.pem" ./public/css/ $DEV_USER@$DEV_HOST:$DEV_BASE_PATH/css/ || { echo "Rsync О CSS command failed"; exit 1; }
+        rsync -avz --delete -e "ssh -i private_key_dev.pem" ./public/js/ $DEV_USER@$DEV_HOST:$DEV_BASE_PATH/js/ || { echo "Rsync О JS command failed"; exit 1; }
+
+        rm private_key_dev.pem  # Удаление временного файла
